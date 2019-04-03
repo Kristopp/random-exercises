@@ -1,0 +1,7 @@
+ maskify = (cc) => {
+//muudan argumendi arryks siis .join muudab koik array elemendid * v2ljarvatud - 4 elementi 
+// ja siis lisan + 4 viimast mite muudetud elemnti
+let code  = Array(cc.length - 3).join("*")+ cc.substr(- 4);
+console.log(code)
+}
+maskify('4556364607935616')
