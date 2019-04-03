@@ -5,3 +5,11 @@ let code  = Array(cc.length - 3).join("*")+ cc.substr(- 4);
 console.log(code)
 }
 maskify('4556364607935616')
+
+//  parem lahendus kasutades RegEx ja lookahed 
+ maskify = (cc) => {
+
+ let masked = cc.replace(/^[\d-\s]+(?=\d{4})/, "************");
+  console.log(masked);
+}
+maskify('1')
