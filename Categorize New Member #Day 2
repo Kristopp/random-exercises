@@ -1,0 +1,17 @@
+//tegin uue var kuhu v22rtus panna
+//Loopisin läbi parammeetri ehk data.length 
+// ja igard kui kui loopis oli vastavad elemendid
+//siis lisas uute array kas Senior või open
+
+openOrSenior = (data) => { 
+    let array1 = [];
+    for (let i = 0; i < data.length; i++) { 
+        if(data[i][0] >= 55 && data[i][1] > 7) { 
+            array1.push("Senior")
+        } else { 
+            array1.push("Open")
+        }
+        
+
+    } return array1
+} 
