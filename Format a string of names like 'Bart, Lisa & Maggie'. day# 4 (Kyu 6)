@@ -1,6 +1,6 @@
 list =(names)=>{
 
-/////Kasutan Map() ja regEx 
+/////Kasutan Map() ja regEx     return objekti nimi siis .join ja vahetan v'lja koik m2rgid '&'
   return names.map(function(x){ return x.name; }).join(", ").replace(/,(?!.*,)/gmi, " &");
 } 
 
