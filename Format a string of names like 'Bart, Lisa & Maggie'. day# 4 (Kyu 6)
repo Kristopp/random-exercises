@@ -4,6 +4,22 @@ list =(names)=>{
   return names.map(function(x){ return x.name; }).join(", ").replace(/,(?!.*,)/gmi, " &");
 } 
 
+
+///////// Teine n2ide 
+function list(names){
+  return names.reduce(function(prev, current, index, array){
+    if (index === 0){
+      return current.name;
+    }
+    else if (index === array.length - 1){
+      return prev + ' & ' + current.name;
+    } 
+    else {
+      return prev + ', ' + current.name;
+    }
+  }, '');
+ }
+
 list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ])
 # returns 'Bart, Lisa & Maggie'
 
