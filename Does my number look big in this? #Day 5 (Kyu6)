@@ -1,0 +1,40 @@
+let narcissistic = (value)=>  {
+
+  let n = value;
+    //Muudan array eraldi elementideks
+  let nrArray = n.toString().split('');
+ //kasutan .map() koos Math.pow et koik elemndid 
+ 
+ let expoArray = nrArray.map(x => Math.pow(x,nrArray.length));
+  let total = expoArray.reduce(( accumulator, currentValue ) => accumulator + currentValue,0);
+ 
+console.log(total);
+  if( total === value) {   
+  return true 
+  } else { 
+  return false
+  }
+  }
+  narcissistic( 7 )
+  narcissistic( 371 )  
+  ///////////////////// Lühim lahendus
+  function narcissistic( value ) {
+  return ('' + value).split('').reduce(function(p, c){
+    return p + Math.pow(c, ('' + value).length)
+    }, 0) == value;  
+    
+  //////// 
+  function narcissistic( value ) {
+  // Code me
+  var nbDigit = value.toString().length;
+  var stringNb = value.toString();
+  var num = 0;
+  
+  for(var i = 0; i < nbDigit ; ++i)
+    num += Math.pow(parseInt(stringNb.charAt(i)), nbDigit); 
+    
+  return num === value;
+  
+}
+    
+    
