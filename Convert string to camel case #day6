@@ -1,0 +1,27 @@
+ 
+ 
+ toCamelCase = (str) => {
+ let strArray ;
+ //Ehk kui str on - siis ta split stringi
+ if(str.indexOf('-') !== -1) { 
+   strArray = str.split('-')
+ } else { 
+   strArray = str.split('_')
+ } 
+ let string = strArray[0];
+
+ for (let i = 1; i < strArray.length;i++) { 
+   string += capitalize(strArray[i]);
+ } 
+ return string
+} 
+///Muudab koik algus t2hed suureks algus t2htedeks
+capitalize = (str) => { 
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+///////Parim Lahendus 
+//Kasutab regEx
+function toCamelCase(str){
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+}
