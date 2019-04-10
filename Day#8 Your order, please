@@ -1,0 +1,29 @@
+
+
+order = (words) => {
+  return words
+    .split(' ')
+    .sort(function( wordA, wordB ) {
+      let numA = +(wordA.match(/\d+/g)[0]);
+      let numB = +(wordB.match(/\d+/g)[0]);
+      return numA - numB;
+    })
+    .join(' ');
+} 
+/// Ilma regEx
+function order(words){
+///Muudab antud stringid arrayks
+  let array = words.split(' ');
+  let sortedArray = [];
+ // loopib l2bi array et leida nr
+  for(i = 0; i <= array.length; i++) {
+    for(j = 0; j < array.length; j++) {
+    //Kuni leiab nr ja siis l[kkab indeix j2rgi sorted array 
+    //.join uue sorted array peal
+      if(array[j].indexOf(i) >= 0) {
+        sortedArray.push(array[j]);
+      }
+    }
+  }
+  return sortedArray.join(' ');
+}
