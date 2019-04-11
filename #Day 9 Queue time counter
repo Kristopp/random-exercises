@@ -1,0 +1,30 @@
+ queue = (queuers, pos) => {
+  let wait = 0;
+  
+  for(let i = 0; i < queuers.length; i++) {
+    if(i <= pos) {
+      wait += Math.min(queuers[i], queuers[pos]);
+    } else {
+      wait += Math.min(queuers[pos]-1, queuers[i]);
+    }
+  }
+  
+  return wait;
+} 
+////
+function queue(queuers, pos){
+  var min=0;
+  while (queuers[pos]!=0)
+  {
+    for (var i=0; i<queuers.length; ++i)
+      if (queuers[i]==0)
+        continue;
+      else
+      {
+        min++;
+        queuers[i]--;
+        if (queuers[pos]==0)
+          return min;
+      }
+  }
+}
