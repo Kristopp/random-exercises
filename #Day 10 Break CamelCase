@@ -1,0 +1,10 @@
+//With regEx
+
+function solution(string) {
+    return string.replace(/([a-z](?=[A-Z]))/g, '$1 ');
+    console.log(string)
+}
+
+solution('camelCasing'); 
+
+
