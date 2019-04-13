@@ -7,4 +7,18 @@ function solution(string) {
 
 solution('camelCasing'); 
 
+//Without regEx 
+
+solution = (string) =>  {
+  //Funktsioon ja konditsioon
+  string = string.split('').map(function (el) { 
+    if (el === el.toUpperCase()) { 
+      // kui if on true siis paneb t[hiku antud kohta]
+      el = ' ' + el
+    }
+    return el
+  })
+}
+
+solution('camelCasing')
 
