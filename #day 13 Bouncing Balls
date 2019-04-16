@@ -1,0 +1,21 @@
+///
+bouncingBall = (h, bounce, window) => { 
+  let pass = -1;
+  if(bounce > 0 && bounce < 1) { 
+    while(h > window) { 
+      pass +=2;
+      h *= bounce;
+    }
+  }
+  return pass;
+}
+///////////////
+bouncingBall = (h,bounce,window) => { 
+
+  //
+  return pass = (bounce > 0 && bounce < 1 && window < h) ?
+  (1+2*Math.floor(Math.log(w/h)/Math.log(bounce))): -1;
+}
+bouncingBall(3.0, 0.66, 1.5)
+
+
