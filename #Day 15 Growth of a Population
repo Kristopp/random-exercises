@@ -1,0 +1,27 @@
+function nbYear(p0, percent, aug, p) {
+    // your code
+    let totalYears = 0;
+    let percentage = percent / 100; 
+    for(var i = p0;i < p; i += growth) { 
+    var growth = Math.round(p0 * percentage) + aug
+    p0 += growth;
+    totalYears++
+    }
+return totalYears
+   
+}
+///Some more popular solutions
+
+function nbYear(p0, percent, aug, p) {
+    var count = 0;   
+    while(p0<p){
+        p0 += p0 * percent/100 + aug;
+        count++;
+    }
+    return count;
+} 
+///// 
+function nbYear(p0, percent, aug, p) {
+  for(var y = 0; p0 < p; y++) p0 = p0 * (1 + percent / 100) + aug;
+  return y;
+}
