@@ -1,0 +1,8 @@
+function grow(x){
+let sum = (acc, currentValue) => acc * currentValue;
+return x.reduce(sum)
+} 
+
+
+///
+const grow=x=> x.reduce((a,b) => a*b);
