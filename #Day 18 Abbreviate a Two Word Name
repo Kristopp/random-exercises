@@ -1,0 +1,5 @@
+
+abbrevName = (name) => { 
+  let letters = name.toUpperCase().split(' ').map(i => i.charAt(0)) 
+  return letters.join('.')
+}
