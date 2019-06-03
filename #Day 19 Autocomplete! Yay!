@@ -1,0 +1,35 @@
+autocomplete = (input, dictionary) => {
+  let final = [];
+  let inputString = "";
+  //Kasutan regEx et leida arrayst ülesse sõnad mis algavad samade
+  //tähtedega mis string on
+  //Kui stringis on midagi peale t2htede siis seda tuleb võta nagu
+  //seal poleks midagi
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].match(/[a-zA-Z]/)) {
+      inputString += input[i];
+    }
+  }
+  for (let j = 0; j < dictionary.length; j++) {
+    let get = dictionary[j].slice(0, inputString.length);
+
+    if (inputString.toLowerCase() == get.toLowerCase()) {
+      final.push(dictionary[j]);
+      if (final.length === 5) {
+        {
+          break;
+        }
+      }
+    }
+  }
+  return final;
+};
+
+autocomplete("a$i", ["airplane", "airport", "apple", "ball"]);
+
+Parim lahendus 
+
+function autocomplete(input, dictionary){
+  var r = new RegExp('^' + input.replace(/[^a-z]/gi,''), 'i');
+  return dictionary.filter(function(w){ return r.test(w); }).slice(0, 5);
+}
